@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: dim_products
+    description: Một dòng là một sản phẩm.
+  - name: dim_users
+    description: Một dòng là một khách hàng, gồm cả vị trí và thông tin nhạy cảm.
+  - name: fact_orders
+    description: Một dòng là một đơn hàng.
+  - name: fact_order_items
+    description: Một dòng là một món hàng trong đơn, kèm amount và total_cost.
+  - name: fact_shipments
+    description: Một dòng là một lô giao hàng.

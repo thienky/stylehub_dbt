@@ -1,0 +1,19 @@
+# dbt
+target/
+logs/
+dbt_packages/
+dbt_internal_packages/
+
+# Environment and sensitive keys
+.env
+profiles.yml
+*.json
+secrets/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+.user.yml

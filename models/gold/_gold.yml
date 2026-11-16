@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: daily_revenue
+    description: Doanh thu theo ngày
+    columns:
+      - name: order_date
+        description: Ngày đặt đơn
+        data_type: 'date'
+      - name: total_orders
+        description: Số đơn khác nhau trong ngày
+        data_type: 'int64'
+      - name: revenue
+        description: Tổng amount
+        data_type: 'float64'
+      - name: total_cost
+        description: Tổng total_cost
+        data_type: 'float64'
+
