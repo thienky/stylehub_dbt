@@ -3,11 +3,48 @@ version: 2
 models:
   - name: dim_products
     description: Một dòng là một sản phẩm.
+    columns:
+      - name: product_id
+        data_tests:
+          - unique
+          - not_null
+      - name: cost
+        data_tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+
   - name: dim_users
     description: Một dòng là một khách hàng, gồm cả vị trí và thông tin nhạy cảm.
+    columns:
+      - name: user_id
+        data_tests:
+          - unique
+          - not_null
+
   - name: fact_orders
     description: Một dòng là một đơn hàng.
+    columns:
+      - name: order_id
+        data_tests:
+          - unique
+          - not_null
+
   - name: fact_order_items
     description: Một dòng là một món hàng trong đơn, kèm amount và total_cost.
+    columns:
+      - name: order_item_id
+        data_tests:
+          - unique
+          - not_null
+
   - name: fact_shipments
     description: Một dòng là một lô giao hàng.
+    columns:
+      - name: shipment_id
+        data_tests:
+          - unique
+          - not_null
+      - name: order_id
+        data_tests:
+          - not_null
