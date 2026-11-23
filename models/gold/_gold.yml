@@ -25,23 +25,15 @@ models:
             combination_of_columns: [order_month, category]
     columns:
       - name: order_month
-        description: Ngày đầu tháng của thời điểm đặt đơn
         data_tests:
           - not_null
       - name: category
-        description: Category của sản phẩm
-        # Category lấy từ dim_products; thiếu join thì null nên để warn.
         data_tests:
           - not_null:
               config:
                 severity: warn
-      - name: total_orders
-        description: Số đơn khác nhau trong tháng đó, category đó
       - name: revenue
-        description: Tổng amount của fact_order_items
         data_tests:
           - dbt_utils.accepted_range:
               arguments:
                 min_value: 0
-      - name: profit
-        description: Tổng (amount - total_cost) của fact_order_items
